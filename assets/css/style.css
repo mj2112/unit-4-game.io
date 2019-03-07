@@ -1,0 +1,46 @@
+h1 {
+    font-size: 28px;
+    color: azure;
+    background: chocolate;
+}
+
+#instructions {
+    background: bisque;
+    color: green;
+    font-size: 14px;
+}
+
+#targetCard {
+    background: limegreen;
+    color: black;
+    font-size: 24px;
+}
+
+#winsAndLossesCard {
+    background: aquamarine;
+    color: black;
+    font-size: 16px;
+}
+
+#totalScoreRow {
+    background: lightseagreen;
+    color: azure;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+#playerTotalCard {
+    background: lightseagreen;
+    color: azure;
+    font-size: 24px;
+}
+
+#crystals {
+    height: 85px;
+}
+
+.crystal-image {
+    width: 80px;
+    height: 80px;
+    margin-left: 15px;
+}

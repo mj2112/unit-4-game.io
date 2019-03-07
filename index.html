@@ -1,1 +1,76 @@
-//index for crystal game
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CrystalsCollector Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="assets//css/style.css">
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 align-middle">
+                    <h1 class="text-center p-3">Crystals Collector!</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="card" id="instructions">
+                        <div class="card-body p-1">
+                            <p>You will be given a random nummber at the start of the game.</p>
+                            <p>Ther are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                            <p>You win the game by matching your total score to the random target number displayed. You lose the game if your total score goes above the random target number.</p>
+                            <p>The value of each crystal is hidden until you click on it.</p>
+                            <p>Each time when the game starts, the game will change the value of each crystal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6"></div>
+            </div>
+            <div class="row match-my-cols">
+                <div class="col-3 m-0">
+                    <div class="card" id="targetCard">
+                        <div class="card-body">
+                            <span id="targetNum">Target number</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 p-0">
+                    <div class="card m-0" id="winsAndLossesCard">
+                        <div class="card-body p-1">
+                            <p id="playerWins">Wins:</p>
+                            <p id="playerLosses">Losses:</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7 p-0"></div>
+
+            </div>
+            <div class="row">
+                <div id="crystals"></div>
+            </div>
+            <div class="row match-my-cols">
+                <div class="col-4 p-0" id="totalScoreRow">
+                    <span id="sumSoFar">Total score:</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card" id="playerTotalCard">
+                        <div class="card-body">
+                            <span id="playerTotal">Player total:</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
