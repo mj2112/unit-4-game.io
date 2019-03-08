@@ -49,7 +49,7 @@ $(document).ready(function() {
             $("#crystals").append(imageCrystal);
             console.log(imageCrystal.val());
         }
-        $("#targetNum").text(computerPick);
+        $("#targetNum").text("Target number: " + computerPick);
         //$("#playerTotal").text(playerScore);
         return computerPick;
     }
@@ -78,7 +78,7 @@ $(document).ready(function() {
         $("#playerTotal").text("Player Total: " + score);
         if (score > computerPick) {
             var over = score - computerPick;
-            $("#playerTotal").text("You went over by " + over + " ! You lose! Press any crystal to play again!");
+            $("#playerTotal").text("You went over by " + over + "! You lose! Press any crystal to play again!");
             numLosses++;
             $("#playerLosses").text("Losses: " + numLosses);
             gameOver = true;
