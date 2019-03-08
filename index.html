@@ -15,12 +15,12 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 align-middle">
+                <div class="col-sm-4 align-middle">
                     <h1 class="text-center p-3">Crystals Collector!</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-sm-6">
                     <div class="card" id="instructions">
                         <div class="card-body p-1">
                             <p>You will be given a random nummber at the start of the game.</p>
@@ -31,40 +31,41 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6"></div>
+                <div class="col-sm-6"></div>
             </div>
             <div class="row match-my-cols">
-                <div class="col-3 m-0">
+                <div class="col-sm-3 m-0">
                     <div class="card" id="targetCard">
                         <div class="card-body">
                             <span id="targetNum">Target number</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-2 p-0">
-                    <div class="card m-0" id="winsAndLossesCard">
-                        <div class="card-body p-1">
-                            <p id="playerWins">Wins:</p>
-                            <p id="playerLosses">Losses:</p>
+                <div class="col-sm-2 p-0">
+                    <div class="card m-0 text-left" id="winsAndLossesCard">
+                        <div class="card-body p-1 align-middle">
+                            <span id="playerWins">Wins:</span>
+                            <hr>
+                            <span id="playerLosses">Losses:</span>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-7 p-0"></div>
+                <div class="col-sm-7 p-0"></div>
 
             </div>
             <div class="row">
                 <div id="crystals"></div>
             </div>
             <div class="row match-my-cols">
-                <div class="col-5 p-0" id="totalScoreRow">
-                    <span id="sumSoFar">Total score:</span>
+                <div class="col-sm-5 p-0" id="totalScoreRow">
+                    <span id="sumSoFar">Score</span>
                 </div>
             </div>
             <div class="row">
-                <div class="col-3">
+                <div class="col-sm-4">
                     <div class="card" id="playerTotalCard">
-                        <div class="card-body">
+                        <div class="card-body p-1">
                             <span id="playerTotal">Player total:</span>
                         </div>
                     </div>

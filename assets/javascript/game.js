@@ -25,10 +25,10 @@ $(document).ready(function() {
         // Create the four crystal images and assign values from crystalValues array
         for (var i = 0; i < crystalValues.length; i++) {
             // Array of src links to the four drystal images
-            var image = ["assets/images/crystal-clipart-emerald-494286-1423411.jpg",
-                "assets/images/crystal-clipart-turquoise-gem-494327-6845513.jpg",
-                "assets/images/crystal-clipart-gemstone-494285-2178960.jpg",
-                "assets/images/crystal-clipart-emerald-494286-2209598.png"
+            var image = ["assets/images/yellow-crystal.png",
+                "assets/images/blue-crystal.png",
+                "assets/images/red-crystal.png",
+                "assets/images/green-crystal.png"
             ];
 
             // For each iteration, we will create an imageCrystal
@@ -55,9 +55,11 @@ $(document).ready(function() {
     }
     initializeGame();
 
-    $(".crystal-image").on('click', function() {
+    $("#crystals").on('click', "img", function() {
         if (gameOver) {
             $("#crystals").empty();
+            $("#playerTotal").text("Player total: 0");
+            gameOver = false;
             initializeGame();
             return;
         } else {
@@ -73,17 +75,17 @@ $(document).ready(function() {
         console.log("Score is: " + score);
         console.log(typeof score);
         console.log(typeof computerPick);
-        $("#playerTotal").html(score);
+        $("#playerTotal").text("Player Total: " + score);
         if (score > computerPick) {
             var over = score - computerPick;
-            $("#playerTotal").text("You went over by " + over + "! You lose!");
+            $("#playerTotal").text("You went over by " + over + " ! You lose! Press any crystal to play again!");
             numLosses++;
             $("#playerLosses").text("Losses: " + numLosses);
             gameOver = true;
             return;
         }
         if (score === computerPick) {
-            $("#playerTotal").text("You win!");
+            $("#playerTotal").text("You win! Press any crystal to play again!");
             numWins++;
             $("#playerWins").text("Wins: " + numWins);
             gameOver = true;
