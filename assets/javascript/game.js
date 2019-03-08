@@ -1,9 +1,16 @@
 $(document).ready(function() {
+    var numWins = 0;
+    var numLosses = 0;
+    var playerScore = 0;
+    var computerPick;
+    var gameOver = false;
 
     function initializeGame() {
+        playerScore = 0;
+
         // Create random target number between 19 - 120
-        var computerPick = Math.floor(Math.random() * 101) + 19;
-        console.log("computerPick");
+        computerPick = Math.floor(Math.random() * 101) + 19;
+        console.log("computerPick is: " + computerPick);
 
         // Create 4 new random numbers between 1 - 12 to fill crystalValues array
         var crystalValues = [];
@@ -18,7 +25,12 @@ $(document).ready(function() {
         // Create the four crystal images and assign values from crystalValues array
         for (var i = 0; i < crystalValues.length; i++) {
             // Array of src links to the four drystal images
-            var image = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"];
+            var image = ["assets/images/crystal-clipart-emerald-494286-1423411.jpg",
+                "assets/images/crystal-clipart-turquoise-gem-494327-6845513.jpg",
+                "assets/images/crystal-clipart-gemstone-494285-2178960.jpg",
+                "assets/images/crystal-clipart-emerald-494286-2209598.png"
+            ];
+
             // For each iteration, we will create an imageCrystal
             var imageCrystal = $("<img>");
 
@@ -37,8 +49,58 @@ $(document).ready(function() {
             $("#crystals").append(imageCrystal);
             console.log(imageCrystal.val());
         }
+        $("#targetNum").text(computerPick);
+        //$("#playerTotal").text(playerScore);
+        return computerPick;
     }
     initializeGame();
+
+    $(".crystal-image").on('click', function() {
+        if (gameOver) {
+            $("#crystals").empty();
+            initializeGame();
+            return;
+        } else {
+            var crystalValue = $(this).attr("data-crystalvalue");
+            console.log("The value of this crystal is: " + crystalValue);
+            var score = playerScore += parseInt(crystalValue);
+            console.log("Player score is: " + playerScore);
+            playGame(score);
+        }
+    });
+
+    function playGame(score) {
+        console.log("Score is: " + score);
+        console.log(typeof score);
+        console.log(typeof computerPick);
+        $("#playerTotal").html(score);
+        if (score > computerPick) {
+            var over = score - computerPick;
+            $("#playerTotal").text("You went over by " + over + "! You lose!");
+            numLosses++;
+            $("#playerLosses").text("Losses: " + numLosses);
+            gameOver = true;
+            return;
+        }
+        if (score === computerPick) {
+            $("#playerTotal").text("You win!");
+            numWins++;
+            $("#playerWins").text("Wins: " + numWins);
+            gameOver = true;
+            return;
+        }
+        if (score < computerPick) {
+            return;
+        }
+
+    };
+
+
+
+
+
+
+
 
 
 
